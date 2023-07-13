@@ -82,16 +82,18 @@ output_prompt_dict: "answer"
   - get `LLaMA-7b` from [here](https://huggingface.co/docs/transformers/main/model_doc/llama) or from the Internet.
   - install FastChat `pip install git+https://github.com/lm-sys/FastChat.git`
   - run `python -m fastchat.model.apply_delta --base /path/to/llama-7b-hf/  --target ./data/vicuna-7b/  --delta /path/to/vicuna-7b-delta-v1.1/`
-- step 3: download the [pretrain_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/pretrain_lynx.pt) or [finetune_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/finetune_lynx.pt) and put it under the `data/`
+- step 3: download the [pretrain_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/pretrain_lynx.pt) or [finetune_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/finetune_lynx.pt) and put it under the `data/`(please check the `checkpoint` in the config is match the file you download.)
 
 organize the files like this:
 ```angular2html
 lynx-llm/
     data/
         Open_VQA_images.jsonl
+        Open_VQA_videos.jsonl
         eva_vit_g.pth
         vicuna-7b/
-        lynx_adapter.pt
+        finetune_lynx.pt
+        pretrain_lynx.pt
     images/
         vqav2/val2014/*.jpg
         places365/val_256/*.jpg
