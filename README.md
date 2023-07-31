@@ -78,10 +78,12 @@ output_prompt_dict: "answer"
 ### prepare checkpoint
 - step 1: download the `eva_vit_1b` on official [website](https://huggingface.co/QuanSun/EVA-CLIP/blob/main/EVA01_g_psz14.pt) and put it under the `data/`, rename it as `eva_vit_g.pth`
 - step 2: prepare the `vicuna-7b` and put it under the `data/`
-  - download Vicuna’s **delta** weight from [v1.1 version](https://huggingface.co/lmsys/vicuna-7b-delta-v1.1) (use git-lfs)
-  - get `LLaMA-7b` from [here](https://huggingface.co/docs/transformers/main/model_doc/llama) or from the Internet.
-  - install FastChat `pip install git+https://github.com/lm-sys/FastChat.git`
-  - run `python -m fastchat.model.apply_delta --base /path/to/llama-7b-hf/  --target ./data/vicuna-7b/  --delta /path/to/vicuna-7b-delta-v1.1/`
+  - method 1: download from [huggingface](https://huggingface.co/lmsys/vicuna-7b-v1.1) directly.
+  - method 2:
+    - download Vicuna’s **delta** weight from [v1.1 version](https://huggingface.co/lmsys/vicuna-7b-delta-v1.1) (use git-lfs)
+    - get `LLaMA-7b` from [here](https://huggingface.co/docs/transformers/main/model_doc/llama) or from the Internet.
+    - install FastChat `pip install git+https://github.com/lm-sys/FastChat.git`
+    - run `python -m fastchat.model.apply_delta --base /path/to/llama-7b-hf/  --target ./data/vicuna-7b/  --delta /path/to/vicuna-7b-delta-v1.1/`
 - step 3: download the [pretrain_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/pretrain_lynx.pt) or [finetune_lynx.pt](https://lf-robot-opensource.bytetos.com/obj/lab-robot-public/lynx_release/finetune_lynx.pt) and put it under the `data/`(please check the `checkpoint` in the config is match the file you download.)
 
 organize the files like this:
