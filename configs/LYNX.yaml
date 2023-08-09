@@ -16,7 +16,7 @@
 image_rdir: "./images/"
 
 # put your test file in jsonl format
-test_files: [ "./data/vqa_plus_v4_fix.jsonl" ]
+test_files: [ "./data/Open_VQA_images.jsonl" ]
 
 # change this prompt for different task
 prompt: "User: {question}\nBot:"
